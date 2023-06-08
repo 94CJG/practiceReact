@@ -11,7 +11,7 @@ function App() {
     }
     setSend((addList) => [todo, ...addList]);
   };
-  console.log(todo);
+  console.log(send);
   return (
     <div>
       <h1>Todo-list Practice !!</h1>
@@ -33,6 +33,7 @@ function App() {
         </form>
       </div>
       <button>Add To Do</button>
+			{send}
     </div>
   );
 }
