@@ -10,13 +10,18 @@ function App() {
       return;
     }
     setSend((addList) => [todo, ...addList]);
+    setTodo('');
   };
+
   return (
     <div>
       <h1>Todo-list Practice !!</h1>
-      <div>
-        <input id="name" type="text" placeholder="write your name!" />
-      </div>
+      <form>
+        <div>
+          <input id="name" type="text" placeholder="write your name!" />
+          <button>Add User Name</button>
+        </div>
+      </form>
 
       {/* ToDolist 작성하는 곳 */}
       <div>
@@ -32,8 +37,10 @@ function App() {
           <button>Add To Do</button>
         </form>
         <ul>
-					{send}
-				</ul>
+          {send.map((item, num) => (
+            <li key={num}> {item}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
@@ -41,11 +48,4 @@ function App() {
 
 export default App;
 
-/**
- * 왜 form태그를 사용해야 할까?
- * form태그가 onSubmit 이벤트가 있는 것으로 알고 있는데
- * 새로고침이 자동으로 돼서 막아줘야 한다는 것은 인지.
- *
- * 사용자가 입력시 할 일에 대해 랜더링 되고,
- *
- */
+
